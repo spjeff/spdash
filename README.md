@@ -1,7 +1,7 @@
 ## Description
 Easily compare server configuration. "Grid" layout shows configuration of the full farm in one table. Export to Excel for filter, sort, and pivot chart.
 
-[![](https://raw.githubusercontent.com/spjeff/spdash/master/doc/download.png)](https://github.com/spjeff/splaunch/releases/download/SPLaunch/SPLaunch.zip)
+[![](https://raw.githubusercontent.com/spjeff/spdash/master/doc/download.png)](https://github.com/spjeff/spdash/releases/download/SPDash/SPDash.wsp)
 
 ## Benefits
 * Do admin tasks faster
