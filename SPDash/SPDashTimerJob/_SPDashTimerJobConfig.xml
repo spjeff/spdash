@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SPDashTimerJobConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TcpPorts>25,80,135,443,3389,5985,9999</TcpPorts>
+  <XPathWebConfig>
+    <string>/configuration/configSections/section[@name='CustomSettings']</string>
+    <string>/configuration/configSections/sectionGroup[@name='SharePoint']</string>
+    <string>/configuration/system.web/customErrors[@mode='Off']</string>
+  </XPathWebConfig>
+  <XPathAppHostConfig>
+    <string>/configuration/system.webServer/security/authentication/windowsAuthentication[@authPersistNonNTLM='true']</string>
+  </XPathAppHostConfig>
+  <FolderIISRoot>c$\inetpub\wwwroot\wss\virtualdirectories</FolderIISRoot>
+  <FolderINETSRV>c$\windows\system32\inetsrv\config</FolderINETSRV>
+  <FileVersion>
+    <string>C$\Program Files\Internet Explorer\iexplore.exe</string>
+    <string>C$\Program Files\Common Files\Microsoft Shared\web server extensions\{0}\ISAPI\owssvr.dll</string>
+    <string>C$\Program Files\Microsoft Office Servers\{0}.0\Bin\mssdmn.exe</string>
+    <string>C$\Program Files\Microsoft Office Servers\{0}.0\Bin\mssearch.exe</string>
+    <string>C$\Program Files\Common Files\Microsoft Shared\web server extensions\{0}\ISAPI\microsoft.sharepoint.portal.dll</string>
+    <string>C$\Program Files\Common Files\Microsoft Shared\web server extensions\{0}\ISAPI\Microsoft.Office.Server.Search.dll</string>
+  </FileVersion>
+  <WMIQuery>
+    <string>IIsApplicationPoolSetting;\root\microsoftiisv2;;Name,AppPoolRecycleMemory,AppPoolQueueLength,AppPoolState,MaxProcesses,PeriodicRestartPrivateMemory,WAMUserName,WAMUserPass</string>
+    <string>IIsWebServerSetting;\root\microsoftiisv2;;ServerComment,DefaultDoc,EnableDirBrowsing,LogFileDirectory,LogType,MaxConnections</string>
+    <string>IIsWebVirtualDirSetting;\root\microsoftiisv2;;Name,NTAuthenticationProviders,Path,UNCPassword,UNCUserName</string>
+    <string>Win32_ComputerSystem;\root\cimv2;;AutomaticManagedPagefile,Domain,DomainRole,Manufacturer,Model,NumberOfLogicalProcessors,NumberOfProcessors,SystemType,TotalPhysicalMemory</string>
+    <string>Win32_ComputerSystemProduct;\root\cimv2;;</string>
+    <string>Win32_LogicalDisk;\root\cimv2; where drivetype=3;Name,Compressed,FileSystem,FreeSpace,Size,VolumeName</string>
+    <string>Win32_OperatingSystem;\root\cimv2;;Name,BuildNumber,Version,Caption,CSDVersion,SizeStoredInPagingFiles,TotalVisibleMemorySize,FreePhysicalMemory</string>
+    <string>Win32_Service;\root\cimv2;;name, caption, pathname, started, startmode, startname, state</string>
+    <string>Win32_Share;\root\cimv2;;</string>
+  </WMIQuery>
+</SPDashTimerJobConfig>

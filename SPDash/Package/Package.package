@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="2412f338-b6b3-493d-8e27-77b5315df101" solutionId="2412f338-b6b3-493d-8e27-77b5315df101" resetWebServer="false" name="SPDash" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="882ef88c-f184-4968-8929-2a5e0880bd7c" />
+    <featureReference itemId="a476b906-ddb1-4e1c-83fd-250d3a392ac2" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="77e43309-1bf0-4d5c-a058-e02580e48726" />
+    <projectItemReference itemId="31a6218e-313d-4727-8528-9000cb266818" />
+    <projectItemReference itemId="0e6d8f19-7f93-4816-ada3-68ccc6e63315" />
+  </projectItems>
+</package>

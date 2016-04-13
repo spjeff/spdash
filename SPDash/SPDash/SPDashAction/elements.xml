@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="SPDash"
+                GroupId="SP Dashboard"
+                Location="Microsoft.SharePoint.Administration.Monitoring"
+                Sequence="50"
+                Title="View Dashboard"
+                Description="Configuration settings from all farm machines. Export to Excel (CSV)">
+    <UrlAction Url="_admin/SPDash/SPDash.aspx"/>
+  </CustomAction>
+  <CustomAction Id="09b5cddd-6c7c-4b14-bcef-84283cc22556"
+                GroupId="SP Dashboard"
+                Location="Microsoft.SharePoint.Administration.Monitoring"
+                Sequence="150"
+                Title="XML Cache"
+                Description="Document Library with XML cached data from Timer Job">
+    <UrlAction Url="/SPDash"/>
+  </CustomAction>
+</Elements>

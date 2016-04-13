@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{185AC7D4-DD7C-4A26-A9AF-F7DFCE70DDC0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPDash</RootNamespace>
+    <AssemblyName>SPDash</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Server, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.SharePoint.ApplicationPages.Administration">
+      <HintPath>C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\CONFIG\ADMINBIN\Microsoft.SharePoint.ApplicationPages.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADMIN\SPDashTimerJob\AppData.cs" />
+    <Compile Include="ADMIN\SPDashTimerJob\ManageJob.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Features\SPDashFeature\SPDashFeature.EventReceiver.cs">
+      <DependentUpon>SPDashFeature.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPDashTimerJob\Engine.cs" />
+    <Compile Include="SPDashTimerJob\Logger.cs" />
+    <Compile Include="SPDashTimerJob\Worker.cs" />
+    <Compile Include="SPDash\SPDash.aspx.cs">
+      <DependentUpon>SPDash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SPDash\SPDash.aspx.designer.cs">
+      <DependentUpon>SPDash.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SPDash\SPDashExport.aspx.cs">
+      <DependentUpon>SPDashExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SPDash\SPDashExport.aspx.designer.cs">
+      <DependentUpon>SPDashExport.aspx.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ADMIN\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0e6d8f19-7f93-4816-ada3-68ccc6e63315}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\SPDashTimerJobFeature\SPDashTimerJobFeature.feature">
+      <FeatureId>{882ef88c-f184-4968-8929-2a5e0880bd7c}</FeatureId>
+    </None>
+    <None Include="Features\SPDashFeature\SPDashFeature.feature">
+      <FeatureId>{a476b906-ddb1-4e1c-83fd-250d3a392ac2}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Package\Package.package">
+      <PackageId>{2412f338-b6b3-493d-8e27-77b5315df101}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="SPDashTimerJob\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{84fd9748-b117-47db-b9c4-b66a3c2cd990}</SharePointProjectItemId>
+    </None>
+    <None Include="SPDash\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1a46a25a-13df-44c2-8129-3d8de338ea4f}</SharePointProjectItemId>
+    </None>
+    <None Include="SPDash\SPDashAction\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{31a6218e-313d-4727-8528-9000cb266818}</SharePointProjectItemId>
+    </None>
+    <None Include="SPDash\SPDashGroup\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{77e43309-1bf0-4d5c-a058-e02580e48726}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ADMIN\SPDashTimerJob\ManageJob.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Features\SPDashTimerJobFeature\SPDashTimerJobFeature.Template.xml">
+      <DependentUpon>SPDashTimerJobFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SPDashFeature\SPDashFeature.Template.xml">
+      <DependentUpon>SPDashFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="SPDashTimerJob\Elements.xml" />
+    <Content Include="SPDashTimerJob\_SPDashTimerJobConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SPDash\SPDash.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="SPDash\SPDashAction\elements.xml" />
+    <Content Include="SPDash\SPDashExport.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="SPDash\SPDashGroup\elements.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" />
+</Project>
